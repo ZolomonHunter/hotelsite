@@ -20,8 +20,36 @@ module.exports = {
             test: /\.css$/,
             use: [
                 MiniCssExtractPlugin.loader,
-                "css-loader"
+                {
+                    loader: 'css-loader',
+                    options: {sourceMap: true},
+                },{
+                    loader: 'postcss-loader',
+                    options: {sourceMap: true, postcssOptions: {
+                        config: path.resolve(__dirname, "./src/postcss.config.js")},
+                    }
+                }
             ]
+        },
+        {
+            test: /\.scss$/,
+            use: [
+                'style-loader',
+                MiniCssExtractPlugin.loader,
+                {
+                    loader: 'css-loader',
+                    options: {sourceMap: true},
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {sourceMap: true, postcssOptions: {
+                        config: path.resolve(__dirname, "./src/postcss.config.js")}, 
+                    }   
+                },{
+                    loader: 'sass-loader',
+                    options: {sourceMap: true},    
+                }
+                ]
         }]
     },
     devServer: {
