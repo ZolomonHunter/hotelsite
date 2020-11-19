@@ -1,18 +1,24 @@
 const path = require('path');
-const { public } = require('webpack-dev-server/bin/options');
 
 module.exports = {
     entry: {
         main: "./src/index.js"
     },
     output: {
-        path: path.resolve(__dirname,"dist"),
+        path: path.resolve(__dirname,"./dist"),
         filename: "[name].js",
         publicPath: "/dist"
     },
+    module: {
+        rules: [{
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: '/node_modules/'
+        }]
+    },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 9000
+        contentBase: path.resolve(__dirname,'dist'),
+        overlay: true,
+        open: true
       }
 }

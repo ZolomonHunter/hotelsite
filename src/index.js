@@ -1,1 +1,2 @@
-console.log(4);
+let a = 6
+console.log(a);
