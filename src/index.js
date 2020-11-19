@@ -1,2 +1,1 @@
-let a = 6
-console.log(a);
+import './pages/uikit/style.css'
