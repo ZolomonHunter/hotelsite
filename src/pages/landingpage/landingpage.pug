@@ -26,5 +26,36 @@ html(lang="en")
                     .menu__buttons
                         input(type="button", value="войти").buttons__signin.header__button
                         input(type="button", value="зарегистрироваться").buttons__signup.header__button
-            main
+            main.layout__main
+            footer.layout__footer
+                .footer__widgets
+                    ul.widgets__list
+                        li.widgets__award
+                            img(src="./assets/landlogo.svg", alt="", srcset="")
+                            p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+                        li.widgets__nav
+                            ul 
+                                li.widgets__list-title Навигация
+                                li О нас
+                                li Новости
+                                li Служба поддержки
+                                li Услуги
+                        li.widgets__about
+                            ul 
+                                li.widgets__list-title О нас
+                                li О сервисе
+                                li Наша команда
+                                li Вакансии
+                                li Инвесторы
+                        li.widgets__help
+                            ul 
+                                li.widgets__list-title Служба поддержки
+                                li Соглашения
+                                li Сообщества
+                                li Связь с нами
+                        li.widgets__subscribe
+                            .widgets__list-title Подписка
+                            p Получайте специальные предложения и новости сервиса
+                            input(type="text")
+                .footer__copyright
                         

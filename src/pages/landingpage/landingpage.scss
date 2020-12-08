@@ -12,9 +12,10 @@
 
 a:active,
 a:hover,
-a {
+a, li {
   text-decoration: none;
   color: inherit;
+  list-style: none;
 }
 
 body{
@@ -24,13 +25,14 @@ body{
 }
 
 
+
 header{
+    max-width: 1440px;
+    margin: auto;
     height: 70px;
     display: flex;
     flex-direction: row;
-    max-width: 1440px;
     justify-content: space-between;
-    margin: auto;
 }
 
 .header{
@@ -49,12 +51,12 @@ header{
         line-height: 15px;
         text-transform: uppercase;
         border-radius: 22px;
+        cursor: pointer;
     }
 }
 
 .menu{
     &__nav{
-        list-style: none;
         li{ 
             display: inline-block;
             position: relative;
@@ -116,4 +118,69 @@ main{
     background: url(./image3.jpg) no-repeat;
     background-size: cover;
     background-position: 0 -70px;
+    margin-bottom: 100px;
 }
+
+footer{
+    max-width: 1440px;
+    margin: auto;
+    height: 372px;
+    background: #FFFFFF;
+    .footer__widgets{
+    }
+    ul{
+        
+    }
+    li{
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(31, 32, 65, 0.5);
+        padding-bottom: 21px;
+    }
+}
+
+.widgets{
+    &__list{
+        padding-left: 140px;
+        padding-right: 140px;
+        display: flex;
+        justify-content: space-between;
+        li{
+            flex: 0 1 260px;
+        }
+        p{
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+    }
+    &__award{
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        color: rgba(31, 32, 65, 0.75);
+    }
+    &__nav{
+        
+    }
+    &__subscribe{
+    }
+    &__list-title{
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #1F2041;
+    }
+}
+
