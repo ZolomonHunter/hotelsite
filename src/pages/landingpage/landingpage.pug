@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Colors & Type
+    body
+        .layout
+            header.layout__header
+                .header__logo
+                    img(src="./assets/landlogo.svg", alt="", srcset="")
+                .header__menu.menu
+                    ul.menu__nav
+                        li
+                            a(href="") О нас
+                        li.popup 
+                            a(href="") Услуги
+                            input(type="button", value="").nav__button.services
+                        li 
+                            a(href="") Вакансии
+                        li 
+                            a(href="") Новости
+                        li.popup 
+                            a(href="") Соглашения
+                            input(type="button", value="").nav__button.agreements
+                    .menu__buttons
+                        input(type="button", value="войти").buttons__signin.header__button
+                        input(type="button", value="зарегистрироваться").buttons__signup.header__button
+            main
+                        

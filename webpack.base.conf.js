@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const path = require('path');
 const fs = require('fs');
+const webpack = require('webpack');
 
 
 
@@ -30,7 +31,7 @@ const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
   template: `./src/pages/${fileName}/${fileName}.pug`,
   alwaysWriteToDisk: true,
   inject: 'body',
-  hash: true,
+  hash: false,
 }));
 
 module.exports = {
@@ -40,7 +41,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname,'dist'),
         filename: "[name].js",
-        publicPath: "/"
+        publicPath: './'
     },
     module: {
         rules: [{
@@ -52,17 +53,18 @@ module.exports = {
             test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
             loader: 'file-loader',
             options: {
-                name: '[path][name].[ext]',
+                name: '/assets/[name].[ext]',
             }
         },
         {
             test: /\.css$/,
             use: [
+                'style-loader',
                 MiniCssExtractPlugin.loader,
-                {
-                    loader: 'css-loader',
-                    options: {sourceMap: true},
-                },{
+                 {
+                     loader: 'css-loader',
+                     options: {sourceMap: true},
+                 },{
                     loader: 'postcss-loader',
                     options: {sourceMap: true}
                 }
@@ -71,7 +73,6 @@ module.exports = {
         {
             test: /\.scss$/,
             use: [
-                'style-loader',
                 MiniCssExtractPlugin.loader,
                 {
                     loader: 'css-loader',
@@ -88,26 +89,13 @@ module.exports = {
         },
         {
             test: /\.pug$/,
-            use: [
-              {
-                loader: "html-loader"
-              },
-              {
-                loader: "pug-html-loader",
-                options: {
-                  "pretty":true
-                }
-              }
-            ]
-        }
+            loader: 'pug-loader'
+        },
     ]},
     plugins: [new MiniCssExtractPlugin({
         filename: "[name].css"
     }),
     new HtmlWebpackHarddiskPlugin(),
-    new HtmlWebpackPlugin({
-        filename: "index.html",
-        templates: './src/index.pug'
-    })].concat(htmlPlugins),
+    ].concat(htmlPlugins),
     
 }

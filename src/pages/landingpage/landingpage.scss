@@ -1,0 +1,119 @@
+@font-face{
+    font-family: 'Montserrat';
+    src: url('/dist/assets/Montserrat-Regular.woff');
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: 'Montserrat';
+    src: url('/dist/assets/Montserrat-Bold.woff');
+    font-weight: bold;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+
+header{
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    max-width: 1440px;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.header{
+    &__logo{
+        padding-left:140px;
+        padding-top: 15px;
+    }
+    &__menu{
+        display: flex;
+        align-items: center;
+    }
+    &__button{  
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        border-radius: 22px;
+    }
+}
+
+.menu{
+    &__nav{
+        list-style: none;
+        li{ 
+            display: inline-block;
+            position: relative;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 17px;
+            color: rgba(31, 32, 65, 0.5);
+            margin-right: 21px;
+            .nav__button{
+                width: 23px;
+                height: 21px;
+                padding: 0;
+                background: url(./expand_more.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer;
+                border:none;
+            }
+            }
+        }
+    &__buttons{
+        display: flex;
+        padding-right: 140px;
+    }
+}
+
+
+.buttons{
+    &__signin{
+        width: 87px;
+        height: 34px;
+        background-color: #FFFFFF;
+        border: 2px solid;
+        color: #BC9CFF;
+        &::after{
+            position: absolute;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            content: '';
+            z-index: -1;
+            border-radius: 22px;
+            
+        }
+ 
+    }
+    &__signup{
+        width: 196px;
+        height: 34px;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        border: none;
+        color: #FFFFFF;
+        margin-left: 20px;
+    }
+}
+
+main{
+    height: 830px;
+    background: url(./image3.jpg) no-repeat;
+    background-size: cover;
+    background-position: 0 -70px;
+}
